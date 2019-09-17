@@ -4,10 +4,11 @@
 template <typename T>
 struct Node {
     T data;
+    int contador;
     Node<T>* next;
-      
-    Node(T data) : data(data) {
+    explicit Node(T data) : data(data) {
         next = nullptr;
+        contador = 0;
     }
       
     void killSelf();
@@ -18,7 +19,6 @@ void Node<T>::killSelf() {
     if (next) {
         next->killSelf();
     }
-    
     delete this;
 }
 
