@@ -48,10 +48,12 @@ class SelfList {
         }  
 
         bool find(T data) {
+            // No está funcionando de la manera correcta
             auto temp = head;
             bool ree = false;
             switch (method){
                 case Move:{
+                    // Mucho código repetido, pudiste haber sacado el bucle para llegar al elemento
                     for(int i = 0; i<size(); temp=temp->next, i++)
                         if(data == temp->data) {
                             swap(temp->data, head->data);
@@ -111,6 +113,7 @@ class SelfList {
         }
 
         T operator [] (int index) {
+            // Y las validaciones si es mayor o negativo?
             auto temp = head;
             if (index<size()){
                 for(; index>0; temp=temp->next, index--){}

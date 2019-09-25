@@ -67,6 +67,8 @@ class TraitsList {
                 for(; index>0; temp=temp->next, index--){}
                 return temp->data;
             }
+
+            // Y el return aquí? Esto dará warning
         }
              
         int size() {
